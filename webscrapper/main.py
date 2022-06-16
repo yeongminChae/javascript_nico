@@ -13,6 +13,6 @@ pagination = indeed_soup.find("div", {"class": "pagination"})
 
 links = pagination.find_all("a")  # list
 pages = []
-for link in links:
-    pages.append(link.find("span").string)
-pages = pages[:-1]  # get spans except last one
+for link in links[:-1]:
+    pages.append(int(link.string))
+max_page = pages[-1]
