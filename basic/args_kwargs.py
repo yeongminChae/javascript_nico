@@ -12,7 +12,7 @@
 #         result += i
 #     return result
 
-# print(plus(1, 2, 3, 4, 5)) -> positional argument
+# print(plus(1, 2, 3, 4, 5)) -> positional argument (list)
 
 # def plus(a, b):
 #     return a + b
@@ -26,4 +26,4 @@
 #     return a + b
 
 
-# plus(1, 2, hi=True, hello=True, bye=True) -> keyword arguments
+# plus(1, 2, hi=True, hello=True, bye=True) -> keyword arguments (dictionary)
