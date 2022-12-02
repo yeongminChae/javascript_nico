@@ -1,18 +1,7 @@
 # https://www.indeed.com/q-python-jobs.html?vjk=d1218a12442b5c05
 # https://www.indeed.com/jobs?as_and=python&limit=50&vjk=d1218a12442b5c05
+from indeed import extract_indeed_pages
+from indeed import extract_indeed_jobs, extract_indeed_jobs
 
-import requests
-from bs4 import BeautifulSoup  # beautifulsoup will get html elements
-
-indeed_resul = requests.get(
-    "https://www.indeed.com/jobs?as_and=python&limit=50&vjk=d1218a12442b5c05")
-
-indeed_soup = BeautifulSoup(indeed_resul.text, "html.parser")
-
-pagination = indeed_soup.find("div", {"class": "pagination"})
-
-links = pagination.find_all("a")  # list
-pages = []
-for link in links[:-1]:
-    pages.append(int(link.string))
-max_page = pages[-1]
+last_indeed_page = extract_indeed_pages()
+extract_indeed_jobs(last_indeed_page)
