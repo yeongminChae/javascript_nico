@@ -23,7 +23,6 @@ model = Sequential([
  Flatten(input_shape=(28, 28)),
  Dense(128, activation='sigmoid'),
  Dense(10, activation='softmax'),
-    Dense(10, activation='softmax')
 ])
 model.summary()
 # 모델 컴파일
